@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val offerBtn = findViewById<Button>(R.id.btnOffers);
         var enteredName = "";
 
+
         submitBtn.setOnClickListener {
             enteredName = inputField.text.toString();
             if(enteredName == ""){
