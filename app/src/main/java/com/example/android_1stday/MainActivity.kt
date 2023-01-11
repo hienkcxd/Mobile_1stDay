@@ -4,6 +4,7 @@ import android.content.Intent
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.widget.Button
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.i("MYTAG", "MainActivity : Oncreate");
         val greetingTextView = findViewById<TextView>(R.id.tvHello);
         val inputField = findViewById<EditText>(R.id.edtName);
         val submitBtn = this.findViewById<Button>(R.id.btnSubmit);
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             enteredName = inputField.text.toString();
             if(enteredName == ""){
                 greetingTextView.text = "";
+                Log.i("MYTAG", "After displaying the message on the textview");
                 offerBtn.visibility = INVISIBLE;
                 Toast.makeText(this@MainActivity, "Please, enter your name!", Toast.LENGTH_SHORT).show();
             }else{
