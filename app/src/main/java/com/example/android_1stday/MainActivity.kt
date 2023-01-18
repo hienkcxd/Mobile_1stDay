@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
             enteredName = inputField.text.toString();
             if(enteredName == ""){
                 greetingTextView.text = "";
-                Log.i("MYTAG", "After displaying the message on the textview");
                 offerBtn.visibility = INVISIBLE;
                 Toast.makeText(this@MainActivity, "Please, enter your name!", Toast.LENGTH_SHORT).show();
             }else{
@@ -44,5 +43,36 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("USER", enteredName);
             startActivity(intent);
         }
+    }
+
+    override fun onStart() {
+        super.onStart();
+        Log.i("MYTAG", "MainActivity : onStart()");
+    }
+
+    override fun onResume() {
+        super.onResume();
+        Log.i("MYTAG", "MainActivity : onResume()");
+    }
+
+    override fun onPause() {
+        super.onPause();
+        Log.i("MYTAG", "MainActivity : onPause()");
+    }
+
+    override fun onStop() {
+        super.onStop();
+        Log.i("MYTAG", "MainActivity : onStop()");
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy();
+        Log.i("MYTAG", "MainActivity : onDestroy()");
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("MYTAG", "MainActivity : onRestart()");
     }
 }
